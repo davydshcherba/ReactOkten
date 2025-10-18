@@ -1,14 +1,19 @@
 import './App.css'
-import MyComponent from "./assets/components/MyComponent/MyComponent.tsx";
+import {products} from "./data/products-array.ts";
+import MyComponent from "./components/MyComponent/MyComponent.tsx";
+
 
 function App() {
 
-  return (
-      <>
-          <p className={"underline"}>Hello</p>
-          <MyComponent title={'Lisa Qu'}>HI</MyComponent>
-      </>
-  )
+    return (
+        <>
+            {
+                products.map((product, index) => (
+                    <MyComponent key={index} product={product}/>
+                ))
+            }
+        </>
+    )
 }
 
 export default App
