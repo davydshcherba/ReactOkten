@@ -1,21 +1,12 @@
-import {useState} from "react";
+import UsersComponent from "./components/UsersComponent.tsx";
 
 const App = () => {
 
-    let [counter, setCounter] = useState(0);
+
+    console.log("App")
     return (
         <div>
-            <h2>{counter}</h2>
-            <button onClick={() => {
-                console.log("+")
-                setCounter(++counter);
-            }}>Increment
-            </button>
-            <button onClick={() => {
-                console.log("-")
-                setCounter(--counter);
-            }}>Decrement
-            </button>
+            <UsersComponent />
         </div>
     );
 };
