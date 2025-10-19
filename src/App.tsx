@@ -1,19 +1,23 @@
-import './App.css'
-import {products} from "./data/products-array.ts";
-import MyComponent from "./components/MyComponent/MyComponent.tsx";
+import {useState} from "react";
 
+const App = () => {
 
-function App() {
-
+    let [counter, setCounter] = useState(0);
     return (
-        <>
-            {
-                products.map((product, index) => (
-                    <MyComponent key={index} product={product}/>
-                ))
-            }
-        </>
-    )
-}
+        <div>
+            <h2>{counter}</h2>
+            <button onClick={() => {
+                console.log("+")
+                setCounter(++counter);
+            }}>Increment
+            </button>
+            <button onClick={() => {
+                console.log("-")
+                setCounter(--counter);
+            }}>Decrement
+            </button>
+        </div>
+    );
+};
 
-export default App
+export default App;
