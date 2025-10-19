@@ -6,6 +6,7 @@ import UserComponent from "./UserComponent.tsx";
 
 const UsersComponent = () => {
     const [users, setUsers] = useState<IUser[]>([]);
+    const [item, setItems] = useState<IUser | null>(null);
 
     useEffect(() => {
         getUsers()
@@ -15,14 +16,17 @@ const UsersComponent = () => {
 
     }, []);
 
-
+    const foo = (item: IUser) => {
+        setItems(item);
+    }
     return (
-
         <div>
             {
-                users.map(data => <UserComponent data={data} key={data.id}/>)
+                item && <div>{JSON.stringify(item)}</div>
             }
-
+            {
+                users.map(data => <UserComponent foo={foo} data={data} key={data.id}/>)
+            }
         </div>
     );
 };
