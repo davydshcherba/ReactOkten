@@ -5,22 +5,22 @@ import UserComponent from "./UserComponent.tsx";
 const UsersComponent = () => {
     const [users, setUsers] = useState<IUser[]>([]);
 
-
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(res => res.json())
+        getUsers()
             .then(response => {
                 setUsers(response);
             })
-        return () => {
-            console.log('fetch done');
-        }
+
     }, []);
+
+
     return (
+
         <div>
             {
-                users.map(data => <UserComponent data={data} key={data.id} />)
+                users.map(data => <UserComponent data={data} key={data.id}/>)
             }
+
         </div>
     );
 };
