@@ -1,12 +1,11 @@
-import UsersComponent from "./components/UsersComponent.tsx";
+import TodosComponent from "./components/todosComponent.tsx";
 
 const App = () => {
 
 
-    console.log("App")
     return (
-        <div>
-            <UsersComponent />
+        <div className="bg-white">
+            <TodosComponent/>
         </div>
     );
 };
