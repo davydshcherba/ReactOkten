@@ -1,11 +1,12 @@
-import TodosComponent from "./components/todosComponent.tsx";
+import {Outlet} from "react-router-dom";
 
 const App = () => {
 
 
     return (
-        <div className="bg-white">
-            <TodosComponent/>
+        <div>
+
+            <Outlet/>
         </div>
     );
 };
